@@ -1,4 +1,4 @@
-package com.projetomobile.compras.produto.service;
+package com.projetomobile.compras.service;
 
 import org.springframework.stereotype.Service;
 

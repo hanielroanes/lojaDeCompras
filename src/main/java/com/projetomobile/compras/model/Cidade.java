@@ -1,4 +1,4 @@
-package com.projetomobile.compras.cidade.model;
+package com.projetomobile.compras.model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -7,9 +7,14 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
-import com.projetomobile.compras.estado.model.Estado;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity
+@Data
+@NoArgsConstructor
 public class Cidade {
 
 	@Id
@@ -17,42 +22,18 @@ public class Cidade {
 	private Long id;
 	private String nome;
 	
+	@JsonManagedReference
 	@ManyToOne
 	@JoinColumn(name = "estado_id")
 	private Estado estado;
-
-	public Cidade() {
-	}
+	
+	
 
 	public Cidade(String nome, Estado estado) {
 		super();
 		this.nome = nome;
 		this.estado = estado;
-	}
-
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
-
-	public String getNome() {
-		return nome;
-	}
-
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
-
-	public Estado getEstado() {
-		return estado;
-	}
-
-	public void setEstado(Estado estado) {
-		this.estado = estado;
-	}
+		}
 	
 	
 }

@@ -1,4 +1,4 @@
-package com.projetomobile.compras.categoria.service;
+package com.projetomobile.compras.service;
 
 import java.util.Optional;
 
@@ -8,8 +8,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
-import com.projetomobile.compras.categoria.model.Categoria;
-import com.projetomobile.compras.categoria.repository.CategoriaRepository;
+import com.projetomobile.compras.model.Categoria;
+import com.projetomobile.compras.repository.CategoriaRepository;
 
 @Service
 public class CategoriaService {

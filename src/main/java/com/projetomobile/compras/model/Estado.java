@@ -1,4 +1,4 @@
-package com.projetomobile.compras.estado.model;
+package com.projetomobile.compras.model;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,7 +9,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
-import com.projetomobile.compras.cidade.model.Cidade;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 
 @Entity
 public class Estado {
@@ -19,6 +19,7 @@ public class Estado {
 	private Long id;
 	private String nome;
 	
+	@JsonBackReference
 	@OneToMany(mappedBy = "estado")
 	private List<Cidade> cidades = new ArrayList<>();
 

@@ -1,4 +1,4 @@
-package com.projetomobile.compras.categoria.model;
+package com.projetomobile.compras.model;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,9 +10,13 @@ import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
-import com.projetomobile.compras.produto.model.Produto;
+
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity
+@Data
+@NoArgsConstructor
 public class Categoria {
 
 	@Id
@@ -24,27 +28,8 @@ public class Categoria {
 	@ManyToMany(mappedBy = "categorias")
 	private List<Produto> produtos = new ArrayList<>();
 
-	public Categoria() {
-	}
-
 	public Categoria(String nome) {
 		this.nome = nome;
-	}
-
-	public String getNome() {
-		return nome;
-	}
-
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
-
-	public List<Produto> getProdutos() {
-		return produtos;
-	}
-
-	public void setProdutos(List<Produto> produtos) {
-		this.produtos = produtos;
 	}
 
 }
